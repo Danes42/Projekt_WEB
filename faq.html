@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="cs">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>FAQ | Studio Nova</title>
+  <meta name="description" content="Často kladené dotazy." />
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+  <header class="site-header">
+    <div class="container header-inner">
+      <a href="index.html" class="logo">Studio<span>Nova</span></a>
+
+      <div class="header-actions">
+        <button class="theme-toggle" id="themeBtn" aria-label="Přepnout motiv">🌙</button>
+        <button class="nav-toggle" id="navToggle" aria-label="Otevřít menu">☰</button>
+      </div>
+
+      <nav class="site-nav" id="siteNav">
+        <ul class="nav-list">
+          <li><a href="index.html">Domů</a></li>
+          <li><a href="about.html">O nás</a></li>
+          <li><a href="services.html">Služby</a></li>
+          <li><a href="portfolio.html">Reference</a></li>
+          <li><a href="faq.html" class="active">FAQ</a></li>
+          <li><a href="contact.html">Kontakt</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <section class="page-hero reveal">
+      <div class="container">
+        <h1>Často kladené dotazy</h1>
+        <p>Jednoduchý FAQ akordeon v čistém JavaScriptu.</p>
+      </div>
+    </section>
+
+    <section class="section reveal">
+      <div class="container">
+        <div class="faq-list">
+          <article class="faq-item">
+            <button class="faq-question">Je tenhle web responzivní?</button>
+            <div class="faq-answer">
+              <p>Ano, rozvržení je navržené tak, aby fungovalo na mobilu, tabletu i desktopu.</p>
+            </div>
+          </article>
+
+          <article class="faq-item">
+            <button class="faq-question">Lze ho upravit pro jiný typ projektu?</button>
+            <div class="faq-answer">
+              <p>Ano, stačí změnit texty, sekce, obrázky a případně barevnou paletu.</p>
+            </div>
+          </article>
+
+          <article class="faq-item">
+            <button class="faq-question">Používá web nějaký framework?</button>
+            <div class="faq-answer">
+              <p>Ne, je postavený čistě na HTML, CSS a JavaScriptu.</p>
+            </div>
+          </article>
+
+          <article class="faq-item">
+            <button class="faq-question">Můžu přidat vlastní formulář nebo galerii?</button>
+            <div class="faq-answer">
+              <p>Ano, projekt je připravený na další rozšíření jako formuláře, reference, mapy nebo blog.</p>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <p>&copy; 2026 StudioNova</p>
+      <p>Školní ukázkový projekt v HTML, CSS a JavaScriptu</p>
+    </div>
+  </footer>
+
+  <script src="js/main.js"></script>
+</body>
+</html>

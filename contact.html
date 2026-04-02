@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="cs">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Kontakt | Studio Nova</title>
+  <meta name="description" content="Kontaktní stránka." />
+  <link rel="stylesheet" href="css/style.css" />
+  <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css" />
+</head>
+<body>
+  <header class="site-header">
+    <div class="container header-inner">
+      <a href="index.html" class="logo">Studio<span>Nova</span></a>
+
+      <div class="header-actions">
+        <button class="theme-toggle" id="themeBtn" aria-label="Přepnout motiv">🌙</button>
+        <button class="nav-toggle" id="navToggle" aria-label="Otevřít menu">☰</button>
+      </div>
+
+      <nav class="site-nav" id="siteNav">
+        <ul class="nav-list">
+          <li><a href="index.html">Domů</a></li>
+          <li><a href="about.html">O nás</a></li>
+          <li><a href="services.html">Služby</a></li>
+          <li><a href="portfolio.html">Reference</a></li>
+          <li><a href="faq.html">FAQ</a></li>
+          <li><a href="contact.html" class="active">Kontakt</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <section class="page-hero reveal">
+      <div class="container">
+        <h1>Kontakt</h1>
+        <p>Tuhle stránku můžeš použít pro kontaktní údaje, formulář a mapu pobočky.</p>
+      </div>
+    </section>
+
+    <section class="section reveal">
+      <div class="container contact-layout">
+        <div>
+          <div class="contact-box">
+            <h2>Kontaktní údaje</h2>
+            <p><strong>E-mail:</strong> info@studionova.cz</p>
+            <p><strong>Telefon:</strong> +420 123 456 789</p>
+            <p><strong>Adresa:</strong> Ukázková 123, Praha</p>
+            <p><strong>Otevírací doba:</strong> Po–Pá, 9:00–17:00</p>
+          </div>
+
+          <div class="map-box">
+            <div id="map"></div>
+          </div>
+        </div>
+
+        <form class="contact-form" id="contactForm">
+          <h2>Napiš nám</h2>
+
+          <div class="form-group">
+            <label for="name">Jméno</label>
+            <input type="text" id="name" name="name" required />
+          </div>
+
+          <div class="form-group">
+            <label for="email">E-mail</label>
+            <input type="email" id="email" name="email" required />
+          </div>
+
+          <div class="form-group">
+            <label for="message">Zpráva</label>
+            <textarea id="message" name="message" rows="6" required></textarea>
+          </div>
+
+          <button type="submit" class="btn btn-primary">Odeslat</button>
+          <p id="formMessage" class="form-message"></p>
+        </form>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <p>&copy; 2026 StudioNova</p>
+      <p>Školní ukázkový projekt v HTML, CSS a JavaScriptu</p>
+    </div>
+  </footer>
+
+  <script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
+  <script src="js/main.js"></script>
+</body>
+</html>

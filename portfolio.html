@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="cs">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Reference | Studio Nova</title>
+  <meta name="description" content="Ukázka projektů a realizací." />
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+  <header class="site-header">
+    <div class="container header-inner">
+      <a href="index.html" class="logo">Studio<span>Nova</span></a>
+
+      <div class="header-actions">
+        <button class="theme-toggle" id="themeBtn" aria-label="Přepnout motiv">🌙</button>
+        <button class="nav-toggle" id="navToggle" aria-label="Otevřít menu">☰</button>
+      </div>
+
+      <nav class="site-nav" id="siteNav">
+        <ul class="nav-list">
+          <li><a href="index.html">Domů</a></li>
+          <li><a href="about.html">O nás</a></li>
+          <li><a href="services.html">Služby</a></li>
+          <li><a href="portfolio.html" class="active">Reference</a></li>
+          <li><a href="faq.html">FAQ</a></li>
+          <li><a href="contact.html">Kontakt</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <section class="page-hero reveal">
+      <div class="container">
+        <h1>Reference a realizace</h1>
+        <p>Ukázka projektů s jednoduchým filtrováním podle kategorií.</p>
+      </div>
+    </section>
+
+    <section class="section reveal">
+      <div class="container">
+        <div class="filter-buttons">
+          <button class="filter-btn active" data-filter="all">Vše</button>
+          <button class="filter-btn" data-filter="web">Weby</button>
+          <button class="filter-btn" data-filter="design">Design</button>
+          <button class="filter-btn" data-filter="branding">Branding</button>
+        </div>
+
+        <div class="portfolio-grid">
+          <article class="portfolio-item" data-category="web">
+            <div class="portfolio-image"></div>
+            <div class="portfolio-content">
+              <h3>Firemní prezentace</h3>
+              <p>Moderní více stránkový web pro menší studio.</p>
+            </div>
+          </article>
+
+          <article class="portfolio-item" data-category="design">
+            <div class="portfolio-image"></div>
+            <div class="portfolio-content">
+              <h3>Návrh rozhraní</h3>
+              <p>Čistý UI návrh s důrazem na přehlednost a typografii.</p>
+            </div>
+          </article>
+
+          <article class="portfolio-item" data-category="branding">
+            <div class="portfolio-image"></div>
+            <div class="portfolio-content">
+              <h3>Vizuální identita</h3>
+              <p>Základní styl značky, barvy a grafické prvky.</p>
+            </div>
+          </article>
+
+          <article class="portfolio-item" data-category="web">
+            <div class="portfolio-image"></div>
+            <div class="portfolio-content">
+              <h3>Portfolio projekt</h3>
+              <p>Osobní prezentační web s referencemi a kontaktem.</p>
+            </div>
+          </article>
+
+          <article class="portfolio-item" data-category="design">
+            <div class="portfolio-image"></div>
+            <div class="portfolio-content">
+              <h3>Landing page</h3>
+              <p>Návrh úvodní stránky se silným vizuálním dojmem.</p>
+            </div>
+          </article>
+
+          <article class="portfolio-item" data-category="branding">
+            <div class="portfolio-image"></div>
+            <div class="portfolio-content">
+              <h3>Styl komunikace</h3>
+              <p>Ukázka práce s barvami, hierarchií a konzistentním stylem.</p>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <p>&copy; 2026 StudioNova</p>
+      <p>Školní ukázkový projekt v HTML, CSS a JavaScriptu</p>
+    </div>
+  </footer>
+
+  <script src="js/main.js"></script>
+</body>
+</html>
