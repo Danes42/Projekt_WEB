@@ -62,6 +62,8 @@ document.querySelectorAll(".faq-question").forEach((button) => {
   button.addEventListener("click", () => {
     const item = button.parentElement;
     item.classList.toggle("open");
+    const isOpen = item.classList.contains("open");
+    button.setAttribute("aria-expanded", isOpen);
   });
 });
 
