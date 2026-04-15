@@ -2,7 +2,6 @@ const navToggle = document.getElementById("navToggle");
 const nav = document.getElementById("siteNav");
 const contactForm = document.getElementById("contactForm");
 const formMessage = document.getElementById("formMessage");
-const themeBtn = document.getElementById("themeBtn");
 
 if (navToggle && nav) {
   navToggle.addEventListener("click", () => {
@@ -11,7 +10,7 @@ if (navToggle && nav) {
 }
 
 if (contactForm) {
-  contactForm.addEventListener("submit", (e) => {
+  contactForm.addEventListener("submit", async (e) => {
     e.preventDefault();
 
     const name = document.getElementById("name")?.value.trim();
@@ -23,25 +22,26 @@ if (contactForm) {
       return;
     }
 
-    formMessage.textContent =
-      "Formulář je zkontrolovaný. Odesílání zatím není napojené na backend.";
-    contactForm.reset();
-  });
-}
+    formMessage.textContent = "Odesílám zprávu...";
 
-if (themeBtn) {
-  const savedTheme = localStorage.getItem("theme");
+    try {
+      const response = await fetch(contactForm.action, {
+        method: contactForm.method,
+        headers: {
+          Accept: "application/json",
+        },
+        body: new FormData(contactForm),
+      });
 
-  if (savedTheme === "dark") {
-    document.body.classList.add("dark");
-    themeBtn.textContent = "☀️";
-  }
-
-  themeBtn.addEventListener("click", () => {
-    document.body.classList.toggle("dark");
-    const isDark = document.body.classList.contains("dark");
-    localStorage.setItem("theme", isDark ? "dark" : "light");
-    themeBtn.textContent = isDark ? "☀️" : "🌙";
+      if (response.ok) {
+        formMessage.textContent = "Zpráva byla odeslána. Děkuji!";
+        contactForm.reset();
+      } else {
+        formMessage.textContent = "Něco se nepovedlo. Zkus to prosím znovu.";
+      }
+    } catch (error) {
+      formMessage.textContent = "Chyba sítě. Zkontroluj připojení a zkus to znovu.";
+    }
   });
 }
 
