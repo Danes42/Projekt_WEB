@@ -73,6 +73,12 @@ textarea {
   font: inherit;
 }
 
+.hint-text {
+  color: var(--muted);
+  margin-top: 0.8rem;
+  font-size: 0.95rem;
+}
+
 .container {
   width: min(var(--container), 92%);
   margin: 0 auto;
@@ -114,12 +120,40 @@ textarea {
 .nav-list a {
   color: var(--muted);
   font-weight: 600;
-  transition: color 0.2s ease;
+  padding: 0.35rem 0.8rem;
+  border-radius: 999px;
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  transition: color 0.2s ease, background 0.2s ease;
+}
+
+.nav-list a::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: -0.25rem;
+  height: 2px;
+  background: var(--primary);
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 0.2s ease;
 }
 
 .nav-list a:hover,
 .nav-list a.active {
   color: var(--text);
+  background: color-mix(in srgb, var(--primary) 18%, var(--surface));
+}
+
+.nav-list a.active {
+  font-weight: 700;
+}
+
+.nav-list a:hover::after,
+.nav-list a.active::after {
+  transform: scaleX(1);
 }
 
 .nav-toggle {

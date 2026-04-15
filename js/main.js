@@ -15,10 +15,13 @@ if (contactForm) {
 
     const name = document.getElementById("name")?.value.trim();
     const email = document.getElementById("email")?.value.trim();
+    const service = document.getElementById("service")?.value.trim();
+    const date = document.getElementById("date")?.value.trim();
+    const time = document.getElementById("time")?.value.trim();
     const message = document.getElementById("message")?.value.trim();
 
-    if (!name || !email || !message) {
-      formMessage.textContent = "Prosím vyplň všechna pole.";
+    if (!name || !email || !service || !date || !time || !message) {
+      formMessage.textContent = "Prosím vyplň všechna pole formuláře.";
       return;
     }
 
@@ -41,7 +44,7 @@ if (contactForm) {
       });
 
       if (response.ok) {
-        formMessage.textContent = "Zpráva byla odeslána. Děkuji!";
+        formMessage.textContent = "Žádost o rezervaci byla odeslána. Ozveme se vám co nejdříve pro potvrzení termínu.";
         contactForm.reset();
       } else {
         formMessage.textContent = "Něco se nepovedlo. Zkus to prosím znovu.";
