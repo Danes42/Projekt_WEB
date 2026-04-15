@@ -22,6 +22,13 @@ if (contactForm) {
       return;
     }
 
+    // Kontrola, jestli běžíme na file:// protokolu
+    if (window.location.protocol === "file:") {
+      formMessage.textContent = "⚠️ Formulář nelze otestovat při přímém otevření souboru. Spusť lokální server (python -m http.server) nebo nahraj web na hosting.";
+      formMessage.style.color = "#ff6b6b";
+      return;
+    }
+
     formMessage.textContent = "Odesílám zprávu...";
 
     try {
