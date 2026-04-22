@@ -1435,3 +1435,16 @@ textarea {
     display: none;
   }
 }
+
+/* =============================================
+   CALENDLY WIDGET
+   ============================================= */
+.calendly-wrap {
+  max-width: 100%;
+  width: 100%;
+}
+
+.calendly-inline-widget {
+  min-width: 320px;
+  height: 700px;
+}
