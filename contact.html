@@ -59,8 +59,9 @@
 
         <form class="contact-form" id="contactForm" action="https://formspree.io/f/xlgadqln" method="POST">
           <input type="hidden" name="_captcha" value="false" />
-          <input type="hidden" name="_subject" value="Nová zpráva z webu Harmonia" />
+          <input type="hidden" name="_subject" value="Obecný dotaz z webu Harmonia" />
           <h2>Napište mi</h2>
+          <p style="color:var(--muted);margin-bottom:1.2rem;">Pro rezervaci termínu použijte prosím <a href="booking.html" style="color:var(--primary);font-weight:700;text-decoration:underline;">online rezervaci</a>. Zde pište obecné dotazy, zájem o obrazy nebo cokoli jiného.</p>
 
           <div class="form-group">
             <label for="name">Jméno</label>
@@ -73,36 +74,12 @@
           </div>
 
           <div class="form-group">
-            <label for="service">Typ konzultace</label>
-            <select id="service" name="service" required>
-              <option value="">Vyberte typ služby</option>
-              <option value="Bylinné léčitelství">Bylinné léčitelství</option>
-              <option value="Homeopatie">Homeopatie</option>
-              <option value="Energetická léčba (Reiki)">Energetická léčba (Reiki)</option>
-              <option value="Výživové poradenství">Výživové poradenství</option>
-              <option value="Aromaterapie">Aromaterapie</option>
-              <option value="Online konzultace">Online konzultace</option>
-              <option value="Zájem o obraz z galerie">Zájem o obraz z galerie</option>
-            </select>
-          </div>
-
-          <div class="form-group">
-            <label for="date">Preferované datum</label>
-            <input type="date" id="date" name="date" required />
-          </div>
-
-          <div class="form-group">
-            <label for="time">Preferovaný čas</label>
-            <input type="time" id="time" name="time" required />
-          </div>
-
-          <div class="form-group">
             <label for="message">Zpráva</label>
-            <textarea id="message" name="message" rows="5" required placeholder="Stručně popište vaše potíže nebo dotaz..."></textarea>
+            <textarea id="message" name="message" rows="7" required placeholder="Váš dotaz, zájem o obraz nebo cokoli jiného..."></textarea>
           </div>
 
           <button type="submit" class="btn btn-primary">Odeslat zprávu</button>
-          <p class="hint-text">Odpovím do 24 hodin a domluvíme termín.</p>
+          <p class="hint-text">Odpovím do 24 hodin.</p>
           <p id="formMessage" class="form-message" role="status" aria-live="polite" aria-atomic="true"></p>
         </form>
       </div>

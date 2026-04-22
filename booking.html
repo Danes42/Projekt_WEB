@@ -4,16 +4,30 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Rezervace | Harmonia</title>
-  <meta name="description" content="Vyberte si volný termín konzultace — bylinné léčitelství, homeopatie, Reiki nebo online konzultace." />
+  <meta name="description" content="Vyberte si volný termín konzultace přímo online — bylinné léčitelství, homeopatie, Reiki nebo online konzultace." />
   <link rel="stylesheet" href="css/style.css" />
 </head>
 <body>
+
+  <!--
+  ╔══════════════════════════════════════════════════════════════╗
+  ║  NASTAVENÍ CALENDLY — jednorázové, pak vše funguje samo     ║
+  ╠══════════════════════════════════════════════════════════════╣
+  ║  1. Vytvořte si bezplatný účet na https://calendly.com      ║
+  ║  2. Settings → Calendar Connections → propojte Google Cal.  ║
+  ║  3. Vytvořte typ události "Konzultace" (60 min)             ║
+  ║  4. Nastavte pracovní hodiny a délku konzultace             ║
+  ║  5. Zkopírujte váš odkaz (např. calendly.com/vase-jmeno)   ║
+  ║  6. Níže nahraďte "harmonia-lenka/konzultace" vaším URL    ║
+  ╚══════════════════════════════════════════════════════════════╝
+  -->
+
   <header class="site-header">
     <div class="container header-inner">
       <a href="index.html" class="logo">Har<span>monia</span></a>
 
       <div class="header-actions">
-        <a href="booking.html" class="btn btn-primary nav-cta active" aria-current="page">Objednat</a>
+        <a href="booking.html" class="btn btn-primary nav-cta">Objednat</a>
         <button class="nav-toggle" id="navToggle" aria-label="Otevřít menu">☰</button>
       </div>
 
@@ -35,122 +49,83 @@
     <section class="page-hero reveal">
       <div class="container">
         <h1>Rezervace termínu</h1>
-        <p>Klikněte na volný termín v kalendáři — datum a čas se automaticky vyplní do formuláře níže.</p>
+        <p>Vyberte si volný čas přímo v kalendáři — po výběru dostanete automatické potvrzení e-mailem.</p>
       </div>
     </section>
 
-    <!-- Booking calendar -->
     <section class="section reveal">
       <div class="container">
-        <div class="booking-wrap">
-          <div class="booking-calendar">
-            <div class="cal-nav">
-              <button class="cal-nav-btn" id="calPrev">← Předchozí</button>
-              <span class="cal-week-label" id="calWeekLabel"></span>
-              <button class="cal-nav-btn" id="calNext">Další →</button>
-            </div>
 
-            <div class="cal-scroll-wrap">
-              <div class="cal-grid" id="calGrid"></div>
-            </div>
-
-            <div class="cal-legend">
-              <span class="legend-item"><span class="legend-dot free"></span>Volno</span>
-              <span class="legend-item"><span class="legend-dot busy"></span>Obsazeno</span>
-              <span class="legend-item"><span class="legend-dot break"></span>Pauza</span>
-              <span class="legend-item"><span class="legend-dot selected"></span>Vybráno</span>
+        <div class="booking-features">
+          <div class="booking-feature">
+            <span class="booking-feature-icon">📅</span>
+            <div>
+              <strong>Vždy aktuální dostupnost</strong>
+              <p>Kalendář se synchronizuje v reálném čase — obsazené termíny jsou automaticky zablokovány.</p>
             </div>
           </div>
-
-          <div class="booking-info">
-            <div class="booking-info-card">
-              <h3>Jak rezervace funguje</h3>
-              <ul class="check-list">
-                <li>vyberte volný termín v kalendáři</li>
-                <li>vyplňte jméno, e-mail a typ konzultace</li>
-                <li>přidejte stručný popis vašich potíží</li>
-                <li>odešlete — potvrdím do 24 hodin</li>
-              </ul>
+          <div class="booking-feature">
+            <span class="booking-feature-icon">✉️</span>
+            <div>
+              <strong>Potvrzení e-mailem</strong>
+              <p>Po rezervaci obdržíte e-mail s potvrzením, připomínkou i odkazem pro případné zrušení.</p>
             </div>
-
-            <div id="selectedSlotBanner" class="selected-slot-banner" style="display:none;">
-              <span class="slot-icon">✓</span>
-              <div>
-                <strong>Vybraný termín</strong>
-                <p id="selectedSlotText"></p>
-              </div>
-            </div>
-
-            <div class="booking-info-card">
-              <h3>Délka konzultace</h3>
-              <p style="color:var(--muted); line-height:1.7;">Úvodní konzultace trvá <strong>60–90 minut</strong>, opakovaná přibližně 45 minut. Online konzultace jsou stejně dlouhé, probíhají přes Zoom nebo Google Meet.</p>
+          </div>
+          <div class="booking-feature">
+            <span class="booking-feature-icon">🔄</span>
+            <div>
+              <strong>Snadné přeplánování</strong>
+              <p>Termín lze přesunout nebo zrušit přímo z potvrzovacího e-mailu bez nutnosti volat.</p>
             </div>
           </div>
         </div>
+
+        <!-- Calendly embed -->
+        <div class="calendly-wrap">
+          <div class="setup-notice">
+            <strong>Nastavení pro majitele webu:</strong>
+            Nahraďte v kódu níže <code>harmonia-lenka/konzultace</code> vaším Calendly odkazem.
+            <a href="https://calendly.com" target="_blank" rel="noopener">Vytvořit účet zdarma →</a>
+          </div>
+
+          <!-- Calendly inline widget — nahraďte URL svým odkazem -->
+          <div class="calendly-inline-widget"
+               data-url="https://calendly.com/harmonia-lenka/konzultace"
+               data-resize="true"
+               aria-label="Rezervační kalendář">
+          </div>
+          <script src="https://assets.calendly.com/assets/external/widget.js" async></script>
+        </div>
+
       </div>
     </section>
 
-    <!-- Booking form -->
-    <section class="section" id="bookingFormSection">
+    <section class="section">
       <div class="container">
-        <div class="section-header">
-          <h2>Vyplňte rezervaci</h2>
-          <p>Termín z kalendáře se automaticky vyplní — stačí doplnit vaše údaje.</p>
+        <div class="split">
+          <div class="panel">
+            <h2>Co čekat na konzultaci</h2>
+            <ul class="check-list">
+              <li>úvodní rozhovor o zdravotní historii a cílech</li>
+              <li>celostní zhodnocení vašeho stavu</li>
+              <li>návrh individuálního léčebného plánu</li>
+              <li>konkrétní doporučení a postup péče</li>
+              <li>prostor pro vaše dotazy</li>
+            </ul>
+          </div>
+          <div class="panel">
+            <h2>Délka a cena konzultace</h2>
+            <p style="color:var(--muted); line-height:1.75; margin-bottom:1rem;">
+              <strong style="color:var(--text)">Úvodní konzultace</strong> — 60–90 minut<br>
+              Podrobný vstupní rozhovor, zhodnocení, léčebný plán.
+            </p>
+            <p style="color:var(--muted); line-height:1.75; margin-bottom:1.4rem;">
+              <strong style="color:var(--text)">Kontrolní konzultace</strong> — 45 minut<br>
+              Vyhodnocení průběhu, úprava plánu.
+            </p>
+            <a href="contact.html" class="btn btn-secondary">Dotazy před rezervací</a>
+          </div>
         </div>
-
-        <form class="booking-form" id="contactForm" action="https://formspree.io/f/xlgadqln" method="POST">
-          <input type="hidden" name="_captcha" value="false" />
-          <input type="hidden" name="_subject" value="Nová rezervace z webu Harmonia" />
-
-          <div class="booking-form-grid">
-            <div class="form-group">
-              <label for="name">Jméno a příjmení</label>
-              <input type="text" id="name" name="name" required />
-            </div>
-
-            <div class="form-group">
-              <label for="email">E-mail</label>
-              <input type="email" id="email" name="email" required />
-            </div>
-
-            <div class="form-group">
-              <label for="phone">Telefon (nepovinné)</label>
-              <input type="tel" id="phone" name="phone" />
-            </div>
-
-            <div class="form-group">
-              <label for="service">Typ konzultace</label>
-              <select id="service" name="service" required>
-                <option value="">Vyberte typ konzultace</option>
-                <option value="Bylinné léčitelství">Bylinné léčitelství</option>
-                <option value="Homeopatie">Homeopatie</option>
-                <option value="Energetická léčba (Reiki)">Energetická léčba (Reiki)</option>
-                <option value="Výživové poradenství">Výživové poradenství</option>
-                <option value="Aromaterapie">Aromaterapie</option>
-                <option value="Online konzultace">Online konzultace</option>
-              </select>
-            </div>
-
-            <div class="form-group">
-              <label for="date">Datum</label>
-              <input type="date" id="date" name="date" required />
-            </div>
-
-            <div class="form-group">
-              <label for="time">Čas</label>
-              <input type="time" id="time" name="time" required />
-            </div>
-          </div>
-
-          <div class="form-group">
-            <label for="message">Stručný popis vašich potíží nebo cílů</label>
-            <textarea id="message" name="message" rows="5" required placeholder="Čím trpíte, jak dlouho, co jste již zkoušeli..."></textarea>
-          </div>
-
-          <button type="submit" class="btn btn-primary">Odeslat rezervaci</button>
-          <p class="hint-text">Rezervaci potvrdím e-mailem nebo telefonicky do 24 hodin.</p>
-          <p id="formMessage" class="form-message" role="status" aria-live="polite" aria-atomic="true"></p>
-        </form>
       </div>
     </section>
   </main>
@@ -159,7 +134,7 @@
     <div class="container footer-inner">
       <div class="footer-section">
         <h3>Harmonia</h3>
-        <p>Rezervujte si konzultaci přírodního léčitelství — osobně v Praze nebo online kdekoli.</p>
+        <p>Rezervujte si konzultaci přírodního léčitelství — online rezervace funguje 24 hodin denně.</p>
         <div class="footer-social">
           <a href="#" aria-label="Facebook">
             <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg>
@@ -201,7 +176,6 @@
     </div>
   </footer>
 
-  <script src="js/availability.js"></script>
   <script src="js/main.js"></script>
 </body>
 </html>
