@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&family=Inter:wght@400;500;600;700;800&display=swap');
+
 :root {
   --bg: #f8f5ee;
   --surface: #ffffff;
@@ -36,6 +38,10 @@ body {
   line-height: 1.65;
   min-height: 100vh;
   transition: background 0.25s ease, color 0.25s ease;
+}
+
+h1, h2, h3 {
+  font-family: 'Playfair Display', Georgia, serif;
 }
 
 img {
@@ -300,8 +306,11 @@ textarea {
 .hero-mini-list li {
   background: color-mix(in srgb, var(--surface) 86%, var(--bg));
   border: 1px solid var(--border);
+  border-left: 3px solid var(--primary);
   border-radius: 14px;
   padding: 0.95rem 1rem;
+  font-size: 0.95rem;
+  color: var(--muted);
 }
 
 .section {
@@ -364,12 +373,38 @@ textarea {
 }
 
 .page-hero {
-  background: linear-gradient(135deg, rgba(58, 125, 94, 0.08), rgba(200, 150, 62, 0.06));
+  background: linear-gradient(135deg, rgba(58, 125, 94, 0.10), rgba(200, 150, 62, 0.07));
   border: 1px solid var(--border);
   border-radius: 30px;
-  padding: 4rem 2rem 2.5rem;
+  padding: 5rem 2rem 3.5rem;
   margin-bottom: 2rem;
   box-shadow: var(--shadow);
+  position: relative;
+  overflow: hidden;
+}
+
+.page-hero::before {
+  content: '';
+  position: absolute;
+  right: -80px;
+  top: -80px;
+  width: 320px;
+  height: 320px;
+  background: radial-gradient(circle, rgba(58, 125, 94, 0.10) 0%, transparent 70%);
+  border-radius: 50%;
+  pointer-events: none;
+}
+
+.page-hero::after {
+  content: '';
+  position: absolute;
+  left: -40px;
+  bottom: -40px;
+  width: 200px;
+  height: 200px;
+  background: radial-gradient(circle, rgba(200, 150, 62, 0.08) 0%, transparent 70%);
+  border-radius: 50%;
+  pointer-events: none;
 }
 
 .page-hero h1 {
@@ -401,7 +436,7 @@ textarea {
 
 .card {
   border-radius: var(--radius);
-  padding: 1.5rem;
+  padding: 1.75rem 1.5rem;
 }
 
 .card h3 {
@@ -410,6 +445,24 @@ textarea {
 
 .card p {
   color: var(--muted);
+}
+
+.card-icon {
+  width: 52px;
+  height: 52px;
+  background: color-mix(in srgb, var(--primary) 13%, var(--soft));
+  border: 1px solid color-mix(in srgb, var(--primary) 20%, var(--border));
+  border-radius: 16px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.45rem;
+  margin-bottom: 1.2rem;
+  transition: transform 0.25s ease;
+}
+
+.card:hover .card-icon {
+  transform: scale(1.08) rotate(-3deg);
 }
 
 .split {
@@ -432,16 +485,29 @@ textarea {
 
 .check-list li {
   color: var(--muted);
-  padding-left: 1.5rem;
+  padding-left: 1.9rem;
   position: relative;
 }
 
 .check-list li::before {
-  content: "•";
+  content: "✓";
   position: absolute;
   left: 0;
+  top: 0;
+  width: 1.2rem;
+  height: 1.2rem;
+  background: color-mix(in srgb, var(--primary) 14%, var(--soft));
   color: var(--primary);
-  font-weight: bold;
+  font-weight: 700;
+  font-size: 0.72rem;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  line-height: 1.2rem;
+  text-align: center;
+  margin-top: 0.22rem;
+  font-family: Arial, sans-serif;
 }
 
 .stats {
@@ -538,16 +604,47 @@ textarea {
 }
 
 .cta-box {
-  background: linear-gradient(135deg, var(--dark), #0f2918);
+  background: linear-gradient(135deg, var(--dark) 0%, #1a4d2e 60%, #0f2918 100%);
   color: white;
   border-radius: 30px;
-  padding: 2.2rem;
+  padding: 3.5rem 2.2rem;
   text-align: center;
+  position: relative;
+  overflow: hidden;
+}
+
+.cta-box::before {
+  content: '';
+  position: absolute;
+  right: -60px;
+  top: -60px;
+  width: 280px;
+  height: 280px;
+  background: radial-gradient(circle, rgba(200, 150, 62, 0.12) 0%, transparent 65%);
+  border-radius: 50%;
+  pointer-events: none;
+}
+
+.cta-box::after {
+  content: '';
+  position: absolute;
+  left: -40px;
+  bottom: -40px;
+  width: 220px;
+  height: 220px;
+  background: radial-gradient(circle, rgba(58, 125, 94, 0.18) 0%, transparent 65%);
+  border-radius: 50%;
+  pointer-events: none;
+}
+
+.cta-box > * {
+  position: relative;
+  z-index: 1;
 }
 
 .cta-box p {
   color: rgba(255, 255, 255, 0.78);
-  margin: 0.9rem auto 1.3rem;
+  margin: 0.9rem auto 1.6rem;
   max-width: 700px;
 }
 
@@ -1447,4 +1544,57 @@ textarea {
 .calendly-inline-widget {
   min-width: 320px;
   height: 700px;
+}
+
+/* =============================================
+   PRICE CARDS (booking page)
+   ============================================= */
+.price-cards {
+  display: flex;
+  flex-direction: column;
+  gap: 0.9rem;
+  margin-top: 1.2rem;
+  margin-bottom: 1.4rem;
+}
+
+.price-card {
+  background: color-mix(in srgb, var(--primary) 5%, var(--soft));
+  border: 1px solid color-mix(in srgb, var(--primary) 18%, var(--border));
+  border-radius: 18px;
+  padding: 1.25rem 1.4rem;
+}
+
+.price-card-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.75rem;
+  margin-bottom: 0.5rem;
+  flex-wrap: wrap;
+}
+
+.price-card-name {
+  font-weight: 700;
+  color: var(--text);
+  font-family: 'Playfair Display', Georgia, serif;
+  font-size: 1rem;
+}
+
+.price-card-duration {
+  font-size: 0.82rem;
+  font-weight: 600;
+  color: var(--primary);
+  background: color-mix(in srgb, var(--primary) 10%, var(--surface));
+  padding: 0.2rem 0.75rem;
+  border-radius: 999px;
+  border: 1px solid color-mix(in srgb, var(--primary) 22%, var(--border));
+  white-space: nowrap;
+  font-family: 'Inter', Arial, sans-serif;
+}
+
+.price-card p {
+  color: var(--muted);
+  font-size: 0.93rem;
+  line-height: 1.65;
+  margin: 0;
 }
