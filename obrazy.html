@@ -3,17 +3,17 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Hlavní</title>
+  <title>Obrazy</title>
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Saira:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="css/style.css" />
 </head>
-<body class="page-home">
+<body class="page-obrazy">
 
   <header class="site-header">
     <div class="nav-banner-outer">
-      <!-- Obraz pro tuto stránku: img/banner-hlavni.jpg -->
+      <!-- Obraz pro tuto stránku: img/banner-obrazy.jpg -->
       <div class="nav-banner"></div>
     </div>
     <div class="nav-bar">
@@ -21,11 +21,11 @@
         <button class="nav-toggle" id="navToggle" aria-label="Otevřít menu" aria-expanded="false">&#9776;</button>
         <nav class="site-nav" id="siteNav" aria-label="Hlavní navigace">
           <ul class="nav-list">
-            <li><a href="index.html" class="active" aria-current="page">Hlavní</a></li>
+            <li><a href="index.html">Hlavní</a></li>
             <li><a href="terapie.html">Terapie</a></li>
             <li><a href="konzultace.html">Konzultace</a></li>
             <li><a href="projekty.html">Projekty</a></li>
-            <li><a href="obrazy.html">Obrazy</a></li>
+            <li><a href="obrazy.html" class="active" aria-current="page">Obrazy</a></li>
             <li><a href="kontakt.html">Kontakt</a></li>
           </ul>
         </nav>
@@ -34,16 +34,27 @@
   </header>
 
   <main>
-    <section class="hero">
-      <div class="container">
-        <h1 class="reveal">Jméno<br>Příjmení</h1>
-        <p class="hero-text reveal">
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor
-          incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud
-          exercitation ullamco laboris.
+    <div class="container">
+      <header class="page-header reveal">
+        <h1>Obrazy</h1>
+        <p class="lead">
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit.
         </p>
+      </header>
+
+      <div class="section">
+        <div class="text-block reveal">
+          <p>
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
+            incididunt ut labore et dolore magna aliqua.
+          </p>
+          <!-- Nahraďte href za skutečnou adresu galerie až bude připravena -->
+          <a href="#" class="link-arrow" style="opacity: 0.4; pointer-events: none;">
+            Galerie obrazů — připravujeme
+          </a>
+        </div>
       </div>
-    </section>
+    </div>
   </main>
 
   <footer class="site-footer">
@@ -57,7 +68,6 @@
         <a href="kontakt.html">Kontakt</a>
       </nav>
       <div class="footer-contact">
-        <!-- Nahraďte kontaktní údaje -->
         <a href="mailto:email@priklad.cz">email@priklad.cz</a>
         <a href="tel:+420000000000">+420 000 000 000</a>
       </div>
