@@ -112,7 +112,7 @@ body.page-kontakt .nav-banner    { background-image: url('../images/Kontakt.jpg'
 .nav-list {
   display: flex;
   align-items: center;
-  gap: 0;
+  gap: 2.5rem;
 }
 
 .nav-list a {
