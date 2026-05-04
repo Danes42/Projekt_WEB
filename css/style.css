@@ -49,14 +49,14 @@ ul { list-style: none; }
 
 /* ─── NAV BANNER ─── */
 .nav-banner-outer {
-  padding: 2.5rem 3% 0;
+  padding: 2rem 0.4% 0;
   background: var(--white);
 }
 
 .nav-banner {
-  max-width: 920px;
+  max-width: 1400px;
   margin: 0 auto;
-  height: 220px;
+  height: 340px;
   background-color: #d8d8d8;
   background-size: cover;
   background-position: center;
@@ -64,21 +64,12 @@ ul { list-style: none; }
 }
 
 
-/* Dočasné placeholder obrázky — nahraďte vlastními malbami v img/ */
-body.page-home .nav-banner       { background-image: url('https://images.unsplash.com/photo-1579783902614-a3fb3927b6a5?auto=format&fit=crop&w=900&q=80'); }
-body.page-terapie .nav-banner    { background-image: url('https://images.unsplash.com/photo-1549490349-8643362247b5?auto=format&fit=crop&w=900&q=80'); }
-body.page-konzultace .nav-banner { background-image: url('https://images.unsplash.com/photo-1536924940846-227afb31e2a5?auto=format&fit=crop&w=900&q=80'); }
-body.page-projekty .nav-banner   { background-image: url('https://images.unsplash.com/photo-1547891654-e66ed7ebb968?auto=format&fit=crop&w=900&q=80'); }
-body.page-obrazy .nav-banner     { background-image: url('https://images.unsplash.com/photo-1541961017774-22349e4a1262?auto=format&fit=crop&w=900&q=80'); }
-body.page-kontakt .nav-banner    { background-image: url('https://images.unsplash.com/photo-1518998053901-5348d3961a04?auto=format&fit=crop&w=900&q=80'); }
-
-/* Po nahrání vlastních maleb zaměňte výše za: */
-/* body.page-home .nav-banner       { background-image: url('../img/banner-hlavni.jpg'); } */
-/* body.page-terapie .nav-banner    { background-image: url('../img/banner-terapie.jpg'); } */
-/* body.page-konzultace .nav-banner { background-image: url('../img/banner-konzultace.jpg'); } */
-/* body.page-projekty .nav-banner   { background-image: url('../img/banner-projekty.jpg'); } */
-/* body.page-obrazy .nav-banner     { background-image: url('../img/banner-obrazy.jpg'); } */
-/* body.page-kontakt .nav-banner    { background-image: url('../img/banner-kontakt.jpg'); } */
+body.page-home .nav-banner       { background-image: url('../images/Hlavni.jpg'); }
+body.page-terapie .nav-banner    { background-image: url('../images/Terapie.jpg'); }
+body.page-konzultace .nav-banner { background-image: url('../images/Konzultace.jpg'); }
+body.page-projekty .nav-banner   { background-image: url('../images/Projekty.jpg'); }
+body.page-obrazy .nav-banner     { background-image: url('../images/Obrazy.jpg'); }
+body.page-kontakt .nav-banner    { background-image: url('../images/Kontakt.jpg'); }
 
 /* ─── SITE IDENTITY ─── */
 .site-identity {
@@ -88,18 +79,19 @@ body.page-kontakt .nav-banner    { background-image: url('https://images.unsplas
 
 .site-name {
   display: block;
-  font-size: clamp(1.1rem, 2.5vw, 1.55rem);
-  font-weight: 400;
-  letter-spacing: 0.05em;
-  margin-bottom: 0.35rem;
+  font-size: clamp(1.7rem, 3.8vw, 2.8rem);
+  font-weight: 300;
+  font-style: italic;
+  letter-spacing: 0.04em;
+  margin-bottom: 0.55rem;
   transition: opacity 0.2s;
 }
 .site-name:hover { opacity: 0.45; }
 
 .site-tagline {
-  font-size: 0.68rem;
-  font-weight: 400;
-  letter-spacing: 0.22em;
+  font-size: clamp(0.7rem, 1.4vw, 0.9rem);
+  font-weight: 700;
+  letter-spacing: 0.3em;
   text-transform: uppercase;
   color: var(--grey-text);
 }
@@ -382,6 +374,14 @@ body.page-kontakt .nav-banner    { background-image: url('https://images.unsplas
   text-transform: uppercase;
 }
 
+/* ─── NO SCROLL PAGES ─── */
+body.page-projekty,
+body.page-obrazy,
+body.page-kontakt {
+  height: 100vh;
+  overflow: hidden;
+}
+
 /* ─── REVEAL ─── */
 .reveal {
   opacity: 0;
@@ -395,14 +395,14 @@ body.page-kontakt .nav-banner    { background-image: url('https://images.unsplas
 
 /* ─── TABLET ─── */
 @media (max-width: 900px) {
-  .nav-banner { height: 180px; }
+  .nav-banner { height: 260px; }
   .hero { padding: 6rem 0 5rem; }
 }
 
 /* ─── MOBILE ─── */
 @media (max-width: 720px) {
   .nav-banner-outer { padding: 1.2rem 3% 0; }
-  .nav-banner { height: 130px; }
+  .nav-banner { height: 200px; }
 
   .nav-toggle { display: block; }
 
@@ -450,7 +450,7 @@ body.page-kontakt .nav-banner    { background-image: url('https://images.unsplas
 
 /* ─── SMALL MOBILE ─── */
 @media (max-width: 420px) {
-  .nav-banner { height: 110px; }
+  .nav-banner { height: 160px; }
   .nav-list a { font-size: 0.9rem; letter-spacing: 0.06em; }
   .hero h1 { font-size: clamp(2.8rem, 12vw, 4rem); }
   .contact-value { font-size: 1.2rem; }
