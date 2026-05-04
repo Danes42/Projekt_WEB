@@ -49,7 +49,7 @@ ul { list-style: none; }
 
 /* ─── NAV BANNER ─── */
 .nav-banner-outer {
-  padding: 2rem 0.4% 0;
+  padding: 2rem 2rem 0;
   background: var(--white);
 }
 
@@ -401,7 +401,7 @@ body.page-kontakt {
 
 /* ─── MOBILE ─── */
 @media (max-width: 720px) {
-  .nav-banner-outer { padding: 1.2rem 3% 0; }
+  .nav-banner-outer { padding: 1.2rem 1.2rem 0; }
   .nav-banner { height: 200px; }
 
   .nav-toggle { display: block; }
