@@ -49,7 +49,7 @@ ul { list-style: none; }
 
 /* ─── NAV BANNER ─── */
 .nav-banner-outer {
-  padding: 2rem 2rem 0;
+  padding: 1rem 1rem 0;
   background: var(--white);
 }
 
@@ -63,6 +63,22 @@ ul { list-style: none; }
   background-repeat: no-repeat;
 }
 
+/* ─── DVOJITÝ BANNER ─── */
+.nav-banner-double .nav-banner {
+  height: 185px;
+}
+
+.nav-banner-double .nav-banner + .nav-banner {
+  margin-top: 0;
+}
+
+body.page-home .nav-banner.nav-banner-second       { background-image: url('../images/Konzultace.jpg'); }
+body.page-terapie .nav-banner.nav-banner-second    { background-image: url('../images/Kontakt.jpg'); }
+body.page-konzultace .nav-banner.nav-banner-second { background-image: url('../images/Obrazy.jpg'); }
+body.page-projekty .nav-banner.nav-banner-second   { background-image: url('../images/Hlavni.jpg'); }
+body.page-obrazy .nav-banner.nav-banner-second     { background-image: url('../images/Projekty.jpg'); }
+body.page-kontakt .nav-banner.nav-banner-second    { background-image: url('../images/Terapie.jpg'); }
+
 
 body.page-home .nav-banner       { background-image: url('../images/Hlavni.jpg'); }
 body.page-terapie .nav-banner    { background-image: url('../images/Terapie.jpg'); }
@@ -71,58 +87,62 @@ body.page-projekty .nav-banner   { background-image: url('../images/Projekty.jpg
 body.page-obrazy .nav-banner     { background-image: url('../images/Obrazy.jpg'); }
 body.page-kontakt .nav-banner    { background-image: url('../images/Kontakt.jpg'); }
 
-/* ─── SITE IDENTITY ─── */
-.site-identity {
+/* ─── SITE BAR (jméno → tagline → nav pod sebou, zarovnáno vlevo) ─── */
+.site-bar {
+  background: var(--white);
+  position: relative;
+  margin-top: 1.8rem;
+}
+
+.site-bar-inner {
+  position: relative;
+  padding: 1.4rem 0 1rem;
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  width: fit-content;
+  margin: 0 auto;
   text-align: center;
-  padding: 1.8rem 0 1rem;
 }
 
 .site-name {
   display: block;
-  font-size: clamp(1.7rem, 3.8vw, 2.8rem);
+  font-size: 51px;
   font-weight: 300;
   font-style: italic;
   letter-spacing: 0.04em;
-  margin-bottom: 0.55rem;
+  margin-bottom: 0.7rem;
   transition: opacity 0.2s;
 }
 .site-name:hover { opacity: 0.45; }
 
 .site-tagline {
-  font-size: clamp(0.7rem, 1.4vw, 0.9rem);
-  font-weight: 700;
-  letter-spacing: 0.3em;
+  display: block;
+  font-size: 29px;
+  font-weight: 300;
+  letter-spacing: 0;
   text-transform: uppercase;
   color: var(--grey-text);
-}
-
-/* ─── NAV BAR ─── */
-.nav-bar {
-  background: var(--white);
-}
-
-.nav-inner {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  min-height: 54px;
-  position: relative;
+  margin-bottom: 1.6rem;
+  text-align: justify;
+  text-align-last: justify;
 }
 
 .nav-list {
   display: flex;
   align-items: center;
-  gap: 2.5rem;
+  justify-content: space-between;
+  gap: 0;
 }
 
 .nav-list a {
-  font-size: 0.77rem;
+  font-size: 14px;
   font-weight: 400;
   letter-spacing: 0.1em;
   text-transform: uppercase;
-  padding: 0.45rem 0.9rem;
   color: var(--grey-text);
   transition: color 0.2s;
+  white-space: nowrap;
 }
 
 .nav-list a:hover {
@@ -142,12 +162,29 @@ body.page-kontakt .nav-banner    { background-image: url('../images/Kontakt.jpg'
   background: none;
   border: none;
   cursor: pointer;
-  font-size: 1.4rem;
-  color: var(--black);
-  line-height: 1;
-  padding: 0.25rem;
+  font-size: 0;
+  padding: 0;
+  width: 30px;
+  height: 18px;
+  position: relative;
+  flex-shrink: 0;
+}
+
+.nav-toggle::before,
+.nav-toggle::after {
+  content: '';
   position: absolute;
-  right: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 28px;
+  height: 1.5px;
+  background: var(--black);
+}
+.nav-toggle::before { top: 4px; }
+.nav-toggle::after { top: 12px; }
+
+.nav-close {
+  display: none;
 }
 
 /* ─── HERO (home) ─── */
@@ -401,36 +438,77 @@ body.page-kontakt {
 
 /* ─── MOBILE ─── */
 @media (max-width: 720px) {
-  .nav-banner-outer { padding: 1.2rem 1.2rem 0; }
+  .nav-banner-outer { padding: 0.3rem 0.3rem 0; }
   .nav-banner { height: 200px; }
 
-  .nav-toggle { display: block; }
+  .site-bar-inner {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .site-tagline { display: none; }
+
+  .nav-toggle {
+    display: block;
+    margin: 0.7rem auto 0;
+  }
 
   .site-nav {
     display: none;
-    position: absolute;
-    top: 100%;
-    left: 0;
-    right: 0;
-    background: var(--white);
-    z-index: 99;
   }
 
-  .site-nav.active { display: block; }
+  .site-nav.active {
+    display: flex;
+    position: fixed;
+    inset: 0;
+    background: var(--white);
+    z-index: 998;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
 
   .nav-list {
     flex-direction: column;
-    padding: 1rem 4%;
-    gap: 0;
+    align-items: center;
+    justify-content: center;
+    gap: 2.5rem;
   }
-
-
 
   .nav-list a {
-    display: block;
-    padding: 1rem 0;
-    font-size: 0.85rem;
+    font-size: 1.6rem;
+    font-weight: 300;
+    letter-spacing: 0.08em;
+    padding: 0;
   }
+
+  .nav-close {
+    display: block;
+    position: absolute;
+    top: 1.5rem;
+    right: 1.5rem;
+    background: none;
+    border: none;
+    cursor: pointer;
+    width: 30px;
+    height: 30px;
+    padding: 0;
+  }
+
+  .nav-close::before,
+  .nav-close::after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 0;
+    width: 100%;
+    height: 1.5px;
+    background: var(--black);
+  }
+  .nav-close::before { transform: rotate(45deg); }
+  .nav-close::after { transform: rotate(-45deg); }
 
   .hero { padding: 4rem 0 3.5rem; }
   .hero h1 { margin-bottom: 1.8rem; }

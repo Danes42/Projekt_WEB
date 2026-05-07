@@ -3,17 +3,23 @@
   var nav = document.getElementById('siteNav');
 
   if (toggle && nav) {
+    // Přidat zavírací tlačítko do fullscreen nav
+    var closeBtn = document.createElement('button');
+    closeBtn.className = 'nav-close';
+    closeBtn.setAttribute('aria-label', 'Zavřít menu');
+    nav.insertBefore(closeBtn, nav.firstChild);
+
+    function closeNav() {
+      nav.classList.remove('active');
+      toggle.setAttribute('aria-expanded', 'false');
+    }
+
     toggle.addEventListener('click', function () {
       var open = nav.classList.toggle('active');
       toggle.setAttribute('aria-expanded', open ? 'true' : 'false');
     });
 
-    document.addEventListener('click', function (e) {
-      if (!toggle.contains(e.target) && !nav.contains(e.target)) {
-        nav.classList.remove('active');
-        toggle.setAttribute('aria-expanded', 'false');
-      }
-    });
+    closeBtn.addEventListener('click', closeNav);
   }
 
   var reveals = document.querySelectorAll('.reveal');
