@@ -49,47 +49,45 @@ ul { list-style: none; }
 
 /* ─── NAV BANNER ─── */
 .nav-banner-outer {
-  padding: 1rem 1rem 0;
+  padding: 0.4rem 1rem 0;
   background: var(--white);
 }
 
 .nav-banner {
   max-width: 1400px;
   margin: 0 auto;
-  height: 150px;
+  height: 175px;
+  overflow: hidden;
   background-color: #d8d8d8;
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
+}
+
+.nav-banner img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  display: block;
 }
 
 /* ─── TROJITÝ BANNER ─── */
 .nav-banner-triple .nav-banner {
-  height: 150px;
+  height: 175px;
 }
 
 .nav-banner-triple .nav-banner + .nav-banner {
   margin-top: 0;
 }
 
-body.page-home .nav-banner-triple .nav-banner:nth-child(1) { background-image: url('../images/1 strana 1.jpg'); }
-body.page-home .nav-banner-triple .nav-banner:nth-child(2) { background-image: url('../images/1 strana 2.jpg'); }
-body.page-home .nav-banner-triple .nav-banner:nth-child(3) { background-image: url('../images/1 strana 3.jpg'); }
-
-body:not(.page-home) .nav-banner-triple .nav-banner:nth-child(1) { background-image: url('../images/zbytek stran 1.jpg'); }
-body:not(.page-home) .nav-banner-triple .nav-banner:nth-child(2) { background-image: url('../images/zbytek stran 2.jpg'); }
-body:not(.page-home) .nav-banner-triple .nav-banner:nth-child(3) { background-image: url('../images/zbytek stran 3.jpg'); }
-
 /* ─── SITE BAR (jméno → tagline → nav pod sebou, zarovnáno vlevo) ─── */
 .site-bar {
   background: var(--white);
   position: relative;
-  margin-top: 1.8rem;
+  margin-top: 0.8rem;
 }
 
 .site-bar-inner {
   position: relative;
-  padding: 1.4rem 0 1rem;
+  padding: 0.8rem 0 0.8rem;
   display: flex;
   flex-direction: column;
   align-items: stretch;
@@ -432,7 +430,7 @@ body.page-kontakt {
 /* ─── MOBILE ─── */
 @media (max-width: 720px) {
   .nav-banner-outer { padding: 0.3rem 0.3rem 0; }
-  .nav-banner { height: 90px; }
+  .nav-banner { height: 80px; }
 
   .site-bar-inner {
     width: 100%;
@@ -527,7 +525,7 @@ body.page-kontakt {
 
 /* ─── SMALL MOBILE ─── */
 @media (max-width: 420px) {
-  .nav-banner { height: 75px; }
+  .nav-banner { height: 65px; }
   .nav-list a { font-size: 0.9rem; letter-spacing: 0.06em; }
   .hero h1 { font-size: clamp(2.8rem, 12vw, 4rem); }
   .contact-value { font-size: 1.2rem; }
