@@ -56,36 +56,29 @@ ul { list-style: none; }
 .nav-banner {
   max-width: 1400px;
   margin: 0 auto;
-  height: 340px;
+  height: 150px;
   background-color: #d8d8d8;
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
 }
 
-/* ─── DVOJITÝ BANNER ─── */
-.nav-banner-double .nav-banner {
-  height: 185px;
+/* ─── TROJITÝ BANNER ─── */
+.nav-banner-triple .nav-banner {
+  height: 150px;
 }
 
-.nav-banner-double .nav-banner + .nav-banner {
+.nav-banner-triple .nav-banner + .nav-banner {
   margin-top: 0;
 }
 
-body.page-home .nav-banner.nav-banner-second       { background-image: url('../images/Konzultace.jpg'); }
-body.page-terapie .nav-banner.nav-banner-second    { background-image: url('../images/Kontakt.jpg'); }
-body.page-konzultace .nav-banner.nav-banner-second { background-image: url('../images/Obrazy.jpg'); }
-body.page-projekty .nav-banner.nav-banner-second   { background-image: url('../images/Hlavni.jpg'); }
-body.page-obrazy .nav-banner.nav-banner-second     { background-image: url('../images/Projekty.jpg'); }
-body.page-kontakt .nav-banner.nav-banner-second    { background-image: url('../images/Terapie.jpg'); }
+body.page-home .nav-banner-triple .nav-banner:nth-child(1) { background-image: url('../images/1 strana 1.jpg'); }
+body.page-home .nav-banner-triple .nav-banner:nth-child(2) { background-image: url('../images/1 strana 2.jpg'); }
+body.page-home .nav-banner-triple .nav-banner:nth-child(3) { background-image: url('../images/1 strana 3.jpg'); }
 
-
-body.page-home .nav-banner       { background-image: url('../images/Hlavni.jpg'); }
-body.page-terapie .nav-banner    { background-image: url('../images/Terapie.jpg'); }
-body.page-konzultace .nav-banner { background-image: url('../images/Konzultace.jpg'); }
-body.page-projekty .nav-banner   { background-image: url('../images/Projekty.jpg'); }
-body.page-obrazy .nav-banner     { background-image: url('../images/Obrazy.jpg'); }
-body.page-kontakt .nav-banner    { background-image: url('../images/Kontakt.jpg'); }
+body:not(.page-home) .nav-banner-triple .nav-banner:nth-child(1) { background-image: url('../images/zbytek stran 1.jpg'); }
+body:not(.page-home) .nav-banner-triple .nav-banner:nth-child(2) { background-image: url('../images/zbytek stran 2.jpg'); }
+body:not(.page-home) .nav-banner-triple .nav-banner:nth-child(3) { background-image: url('../images/zbytek stran 3.jpg'); }
 
 /* ─── SITE BAR (jméno → tagline → nav pod sebou, zarovnáno vlevo) ─── */
 .site-bar {
@@ -432,14 +425,14 @@ body.page-kontakt {
 
 /* ─── TABLET ─── */
 @media (max-width: 900px) {
-  .nav-banner { height: 260px; }
+  .nav-banner { height: 120px; }
   .hero { padding: 6rem 0 5rem; }
 }
 
 /* ─── MOBILE ─── */
 @media (max-width: 720px) {
   .nav-banner-outer { padding: 0.3rem 0.3rem 0; }
-  .nav-banner { height: 200px; }
+  .nav-banner { height: 90px; }
 
   .site-bar-inner {
     width: 100%;
@@ -448,11 +441,17 @@ body.page-kontakt {
     align-items: center;
   }
 
-  .site-tagline { display: none; }
+  .site-name { font-size: 30px; }
+
+  .site-tagline {
+    display: block;
+    font-size: 16px;
+    margin-bottom: 0.8rem;
+  }
 
   .nav-toggle {
     display: block;
-    margin: 0.7rem auto 0;
+    margin: 0 auto 0.5rem;
   }
 
   .site-nav {
@@ -528,7 +527,7 @@ body.page-kontakt {
 
 /* ─── SMALL MOBILE ─── */
 @media (max-width: 420px) {
-  .nav-banner { height: 160px; }
+  .nav-banner { height: 75px; }
   .nav-list a { font-size: 0.9rem; letter-spacing: 0.06em; }
   .hero h1 { font-size: clamp(2.8rem, 12vw, 4rem); }
   .contact-value { font-size: 1.2rem; }
