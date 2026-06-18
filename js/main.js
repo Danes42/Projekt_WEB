@@ -22,6 +22,24 @@
     closeBtn.addEventListener('click', closeNav);
   }
 
+  // Přepínání mezi dvěma variantami 2. obrázku na úvodní stránce
+  var banner2Toggle = document.getElementById('banner2Toggle');
+  var banner2Img = document.getElementById('heroBanner2');
+
+  if (banner2Toggle && banner2Img) {
+    var originalSrc = banner2Img.getAttribute('src');
+    var altSrc = 'images/aktulni/uvodni pokus 2.jpg';
+    var showingAlt = false;
+
+    banner2Toggle.addEventListener('click', function () {
+      showingAlt = !showingAlt;
+      banner2Img.src = showingAlt ? altSrc : originalSrc;
+      banner2Toggle.textContent = showingAlt
+        ? '← Zobrazit původní 2. obrázek'
+        : 'Zobrazit alternativu 2. obrázku →';
+    });
+  }
+
   var reveals = document.querySelectorAll('.reveal');
   if (!reveals.length) return;
 
