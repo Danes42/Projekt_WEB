@@ -339,7 +339,7 @@ ul { list-style: none; }
   flex-direction: column;
   align-items: center;
   gap: 0.6rem;
-  padding: 2.2rem 0;
+  padding: 0.1rem 0 2.2rem;
 }
 
 .contact-label {
@@ -363,7 +363,7 @@ ul { list-style: none; }
 
 /* ─── COMING SOON ─── */
 .coming-soon {
-  padding: 8rem 0 10rem;
+  padding: 0.5rem 0 10rem;
 }
 
 .coming-soon p {
