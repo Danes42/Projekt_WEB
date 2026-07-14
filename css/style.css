@@ -87,28 +87,47 @@ ul { list-style: none; }
   margin-top: 1.2rem;
 }
 
-/* Terapie a Kontakt: oba obrázky stejně široké, proporcionálně zmenšené (stejný
-   poměr zmenšení jako proužek 1 jinde) a zobrazené celé (přirozený poměr stran, bez oříznutí) */
+/* Terapie: 3 prouzky (tenky + vysoky + tenky) */
 @media (min-width: 901px) {
   body.page-terapie .nav-banner-stack .nav-banner:nth-child(1) {
-    width: 600px;
+    width: 880px;
   }
-  body.page-terapie .nav-banner-stack .nav-banner:nth-child(2) {
-    width: 540px;
+  body.page-terapie .nav-banner-stack .nav-banner:nth-child(1) img {
+    height: 130px;
   }
+  body.page-terapie .nav-banner-stack .nav-banner:nth-child(2) img {
+    height: 270px;
+  }
+  body.page-terapie .nav-banner-stack .nav-banner:nth-child(3) {
+    width: 680px;
+    max-width: 100%;
+  }
+  body.page-terapie .nav-banner-stack .nav-banner:nth-child(3) img {
+    width: 100%;
+    height: 110px;
+    object-fit: cover;
+    object-position: center;
+  }
+
+  /* Kontakt: 3 prouzky (tenky + stredni + vysoky) */
   body.page-kontakt .nav-banner-stack .nav-banner:nth-child(1) {
-    width: 560px;
+    width: 740px;
+  }
+  body.page-kontakt .nav-banner-stack .nav-banner:nth-child(1) img {
+    height: 120px;
   }
   body.page-kontakt .nav-banner-stack .nav-banner:nth-child(2) {
     width: 600px;
+    max-width: 100%;
   }
-  body.page-terapie .nav-banner-stack .nav-banner:nth-child(1) img,
-  body.page-kontakt .nav-banner-stack .nav-banner:nth-child(1) img,
-  body.page-terapie .nav-banner-stack .nav-banner:nth-child(2) img,
   body.page-kontakt .nav-banner-stack .nav-banner:nth-child(2) img {
     width: 100%;
-    height: auto;
-    max-width: 100%;
+    height: 110px;
+    object-fit: cover;
+    object-position: center;
+  }
+  body.page-kontakt .nav-banner-stack .nav-banner:nth-child(3) img {
+    height: 250px;
   }
 }
 
@@ -151,7 +170,9 @@ ul { list-style: none; }
   margin-bottom: 1.6rem;
   text-align: justify;
   text-align-last: justify;
+  transition: opacity 0.2s;
 }
+.site-tagline:hover { opacity: 0.45; }
 
 .nav-list {
   display: flex;
@@ -347,12 +368,16 @@ body.page-konzultace .lead {
   margin: 0 auto;
 }
 
+body.page-kontakt .contact-section {
+  margin-top: -1.7rem;
+}
+
 .contact-row {
   display: flex;
   flex-direction: column;
   align-items: center;
   gap: 0.6rem;
-  padding: 0.1rem 0 2.2rem;
+  padding: 0.1rem 0 0.5rem;
 }
 
 .contact-label {
@@ -364,7 +389,7 @@ body.page-konzultace .lead {
 
 .contact-value {
   font-family: 'Saira', system-ui, sans-serif;
-  font-size: 1.9rem;
+  font-size: 1.3rem;
   font-weight: 300;
   line-height: 1;
 }
@@ -478,6 +503,11 @@ body.page-kontakt {
     height: auto;
     max-width: none;
   }
+  .nav-banner-stack .nav-banner:nth-child(3) img {
+    width: 100%;
+    height: auto;
+    max-width: none;
+  }
   .hero { padding: 6rem 0 5rem; }
 }
 
@@ -581,9 +611,7 @@ body.page-kontakt {
 @media (max-width: 420px) {
   .nav-banner-stack .nav-banner:nth-child(2) img { height: 195px; }
   body.page-obrazy .nav-banner-stack .nav-banner:nth-child(2) img { height: 187px; }
-  body.page-terapie .nav-banner-stack .nav-banner:nth-child(2) img,
-  body.page-kontakt .nav-banner-stack .nav-banner:nth-child(2) img { height: 92px; }
-  .nav-list a { font-size: 0.9rem; letter-spacing: 0.06em; }
+.nav-list a { font-size: 0.9rem; letter-spacing: 0.06em; }
   .hero h1 { font-size: clamp(2.8rem, 12vw, 4rem); }
   .contact-value { font-size: 1.2rem; }
 }
