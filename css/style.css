@@ -369,7 +369,7 @@ body.page-konzultace .lead {
 }
 
 body.page-kontakt .contact-section {
-  margin-top: -1.7rem;
+  margin-top: 1.5rem;
 }
 
 .contact-row {
@@ -468,6 +468,16 @@ body.page-kontakt .contact-section {
   color: var(--grey-text);
   letter-spacing: 0.07em;
   text-transform: uppercase;
+}
+
+/* ─── KONZULTACE: 3. prouzek jen na mobilu ─── */
+.nav-banner--mobile-only {
+  display: none;
+}
+@media (max-width: 900px) {
+  .nav-banner--mobile-only {
+    display: block;
+  }
 }
 
 /* ─── NO SCROLL PAGES ─── */
