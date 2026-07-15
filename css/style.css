@@ -263,7 +263,7 @@ body:not(.page-home) .site-tagline {
 
 /* ─── PAGE HEADER ─── */
 .page-header {
-  padding: 1.5rem 0 0;
+  padding: 4rem 0 0;
   margin-bottom: 1.5rem;
 }
 
@@ -284,7 +284,7 @@ body:not(.page-home) .site-tagline {
 
 body.page-home .page-header .lead,
 body.page-terapie .page-header .lead {
-  max-width: 100%;
+  max-width: 700px;
   font-size: 0.95rem;
 }
 
@@ -294,7 +294,7 @@ body.page-konzultace main .container {
   width: min(1041px, 92%);
 }
 body.page-konzultace .lead {
-  max-width: 1041px;
+  max-width: 700px;
 }
 
 /* ─── SECTION ─── */
@@ -304,7 +304,7 @@ body.page-konzultace .lead {
 
 /* ─── TEXT BLOCK ─── */
 .text-block {
-  max-width: 100%;
+  max-width: 700px;
   margin: 0 auto;
 }
 
@@ -398,7 +398,7 @@ body.page-kontakt .contact-section {
 
 /* ─── COMING SOON ─── */
 .coming-soon {
-  padding: 0.5rem 0 10rem;
+  padding: 4rem 0 10rem;
 }
 
 .coming-soon p {
