@@ -88,6 +88,11 @@ ul { list-style: none; }
 }
 
 @media (min-width: 901px) {
+  /* Obrazy: strip 2 je nth-child(3) kvuli mobile-only pruhu */
+  body.page-obrazy .nav-banner-stack .nav-banner:nth-child(3) img {
+    height: 320px;
+  }
+
   /* Kontakt: 3 prouzky (tenky + stredni + vysoky) */
   body.page-kontakt .nav-banner-stack .nav-banner:nth-child(1) {
     width: 800px;
