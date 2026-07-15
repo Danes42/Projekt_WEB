@@ -470,13 +470,21 @@ body.page-kontakt .contact-section {
   text-transform: uppercase;
 }
 
-/* ─── KONZULTACE: 3. prouzek jen na mobilu ─── */
+/* ─── KONZULTACE: jine obrazky na PC a telefonu ─── */
 .nav-banner--mobile-only {
   display: none;
 }
 @media (max-width: 900px) {
   .nav-banner--mobile-only {
     display: block;
+  }
+  .nav-banner--mobile-only img {
+    width: 100%;
+    height: auto;
+    max-width: none;
+  }
+  .nav-banner--desktop-only {
+    display: none;
   }
 }
 
