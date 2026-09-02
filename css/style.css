@@ -108,6 +108,16 @@ ul { list-style: none; }
     object-fit: cover;
     object-position: center;
   }
+
+  body.page-home .nav-banner {
+    width: 1041px;
+  }
+
+  body.page-home .nav-banner--desktop-short img,
+  body.page-home .nav-banner--desktop-tall img {
+    height: auto;
+    object-fit: contain;
+  }
 }
 
 /* ─── SITE BAR (jméno → tagline → nav pod sebou, zarovnáno vlevo) ─── */
