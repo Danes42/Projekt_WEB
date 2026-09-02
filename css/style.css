@@ -113,10 +113,37 @@ ul { list-style: none; }
     width: 1041px;
   }
 
-  body.page-home .nav-banner--desktop-short img,
-  body.page-home .nav-banner--desktop-tall img {
+  body.page-home .nav-banner-outer {
+    height: calc(475px + 0.6rem);
+    padding-top: 0.4rem;
+  }
+
+  body.page-home .nav-banner-stack .nav-banner + .nav-banner {
+    margin-top: 0.4rem;
+  }
+
+  body.page-home .nav-banner--desktop-short {
+    flex: 0 0 auto;
+  }
+
+  body.page-home .nav-banner--desktop-short img {
     height: auto;
     object-fit: contain;
+  }
+
+  body.page-home .nav-banner--desktop-tall {
+    flex: 1 1 auto;
+    min-height: 0;
+  }
+
+  body.page-home .nav-banner--desktop-tall picture,
+  body.page-home .nav-banner--desktop-tall img {
+    height: 100%;
+  }
+
+  body.page-home .nav-banner--desktop-tall img {
+    object-fit: cover;
+    object-position: center;
   }
 }
 
