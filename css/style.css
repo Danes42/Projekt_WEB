@@ -62,59 +62,41 @@ ul { list-style: none; }
 .nav-banner {
   overflow: hidden;
   background-color: #d8d8d8;
+  width: 1041px;
+  max-width: 100%;
+}
+
+.nav-banner picture {
+  display: block;
 }
 
 .nav-banner img {
   display: block;
-  width: auto;
-  max-width: 100%;
-}
-
-/* ─── SVAZEK BANNERŮ (bez mezery mezi sebou, pevná výška na PC, šířka dle poměru stran) ─── */
-.nav-banner-stack .nav-banner:nth-child(1) {
-  width: 1041px;
-  max-width: 100%;
-}
-.nav-banner-stack .nav-banner:nth-child(1) img {
   width: 100%;
-  height: 150px;
-  object-fit: cover;
-  object-position: center;
 }
-.nav-banner-stack .nav-banner:nth-child(2) img { height: 320px; }
 
+/* ─── BANNERY (na PC jednotná šířka a celková výška) ─── */
 .nav-banner-stack .nav-banner + .nav-banner {
   margin-top: 1.2rem;
 }
 
 @media (min-width: 901px) {
-  /* Obrazy: strip 2 je nth-child(3) kvuli mobile-only pruhu */
-  body.page-obrazy .nav-banner-stack .nav-banner:nth-child(3) img {
-    height: 320px;
-  }
-
-  /* Kontakt: 3 prouzky (tenky + stredni + vysoky) */
-  body.page-kontakt .nav-banner-stack .nav-banner:nth-child(1) {
-    width: 800px;
-    max-width: 100%;
-  }
-  body.page-kontakt .nav-banner-stack .nav-banner:nth-child(1) img {
-    width: auto;
-    height: auto;
-    max-width: 100%;
-  }
-  body.page-kontakt .nav-banner-stack .nav-banner:nth-child(2) {
-    width: 600px;
-    max-width: 100%;
-  }
-  body.page-kontakt .nav-banner-stack .nav-banner:nth-child(2) img {
-    width: 100%;
-    height: 135px;
+  .nav-banner--desktop-short img {
+    height: 150px;
     object-fit: cover;
     object-position: center;
   }
-  body.page-kontakt .nav-banner-stack .nav-banner:nth-child(3) img {
-    height: 250px;
+
+  .nav-banner--desktop-tall img {
+    height: 320px;
+    object-fit: cover;
+    object-position: center;
+  }
+
+  .nav-banner--desktop-single img {
+    height: calc(470px + 1.2rem);
+    object-fit: cover;
+    object-position: center;
   }
 }
 
@@ -467,7 +449,7 @@ body.page-kontakt .contact-section {
   text-transform: uppercase;
 }
 
-/* ─── KONZULTACE: jine obrazky na PC a telefonu ─── */
+/* ─── SAMOSTATNÉ MOBILNÍ DÍLY BANNERŮ ─── */
 .nav-banner--mobile-only {
   display: none;
 }
@@ -479,9 +461,6 @@ body.page-kontakt .contact-section {
     width: 100%;
     height: auto;
     max-width: none;
-  }
-  .nav-banner--desktop-only {
-    display: none;
   }
 }
 
@@ -507,21 +486,10 @@ body.page-kontakt {
 /* ─── TABLET ─── */
 @media (max-width: 900px) {
   .nav-banner-stack { display: block; }
-  .nav-banner { max-width: 1400px; margin: 0 auto; overflow: hidden; }
-  .nav-banner-stack .nav-banner:nth-child(1) img {
+  .nav-banner { margin: 0 auto; }
+  .nav-banner img {
     width: 100%;
     height: auto;
-    max-width: none;
-  }
-  .nav-banner-stack .nav-banner:nth-child(2) img {
-    width: 100%;
-    height: auto;
-    max-width: none;
-  }
-  .nav-banner-stack .nav-banner:nth-child(3) img {
-    width: 100%;
-    height: auto;
-    max-width: none;
   }
   .hero { padding: 6rem 0 5rem; }
 }
@@ -624,9 +592,7 @@ body.page-kontakt {
 
 /* ─── SMALL MOBILE ─── */
 @media (max-width: 420px) {
-  .nav-banner-stack .nav-banner:nth-child(2) img { height: 195px; }
-  body.page-obrazy .nav-banner-stack .nav-banner:nth-child(2) img { height: 187px; }
-.nav-list a { font-size: 0.9rem; letter-spacing: 0.06em; }
+  .nav-list a { font-size: 0.9rem; letter-spacing: 0.06em; }
   .hero h1 { font-size: clamp(2.8rem, 12vw, 4rem); }
   .contact-value { font-size: 1.2rem; }
 }
