@@ -94,6 +94,15 @@ ul { list-style: none; }
     margin-top: 0.6rem;
   }
 
+  .nav-banner--desktop-short {
+    height: 150px;
+    flex: 0 0 150px;
+  }
+
+  .nav-banner--desktop-short picture {
+    height: 100%;
+  }
+
   .nav-banner--desktop-short img {
     height: 150px;
     object-fit: cover;
@@ -127,15 +136,15 @@ ul { list-style: none; }
 
   body.page-home .nav-banner-outer {
     height: calc(475px + 0.6rem);
-    padding-top: 0.4rem;
+    padding-top: 0.6rem;
   }
 
   body.page-home .nav-banner-stack .nav-banner + .nav-banner {
-    margin-top: 0.4rem;
+    margin-top: 0.6rem;
   }
 
   body.page-home .nav-banner--desktop-short {
-    flex: 0 0 auto;
+    flex: 0 0 150px;
   }
 
   body.page-home .nav-banner--desktop-short img {
