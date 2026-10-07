@@ -344,6 +344,47 @@ body.page-konzultace .lead {
   max-width: 700px;
 }
 
+/* ─── ÚVODNÍ STRÁNKA + OBRAZY – zkušební úprava hlavičky (a textu na úvodu) (07.10) ─── */
+/* menu: bez podtržení, při najetí/aktivní jen tučně */
+body.page-home .nav-list a:hover,
+body.page-home .nav-list a.active,
+body.page-obrazy .nav-list a:hover,
+body.page-obrazy .nav-list a.active {
+  color: var(--black);
+  font-weight: 600;
+  text-decoration: none;
+}
+
+/* text pod hlavičkou o malinko větší */
+body.page-home .page-header .lead,
+body.page-home .text-block p {
+  font-size: 1.07rem;
+}
+
+@media (min-width: 721px) {
+  /* hlavička větší, ale celková výška zůstává stejná (menší řádkování) */
+  body.page-home .nav-list a,
+  body.page-obrazy .nav-list a {
+    font-size: 18px;
+    line-height: 1.7;
+  }
+  body.page-home .site-name,
+  body.page-obrazy .site-name {
+    font-size: 39px;
+    line-height: 1.45;
+  }
+  body.page-home .site-tagline,
+  body.page-obrazy .site-tagline {
+    font-size: 28px;
+    line-height: 1.4;
+  }
+
+  /* větší mezera mezi hlavičkou a textem – na první pohled jen první odstavec */
+  body.page-home .page-header {
+    padding-top: 7.5rem;
+  }
+}
+
 /* ─── SECTION ─── */
 .section {
   padding: 0 0 5.5rem;
