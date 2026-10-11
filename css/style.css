@@ -332,7 +332,6 @@ ul { list-style: none; }
 body.page-home .page-header .lead,
 body.page-terapie .page-header .lead {
   max-width: 700px;
-  font-size: 1rem;
 }
 
 /* Konzultace: úvodní odstavec stejně široký jako širší proužek banneru (1041px),
@@ -344,43 +343,42 @@ body.page-konzultace .lead {
   max-width: 700px;
 }
 
-/* ─── ÚVODNÍ STRÁNKA + OBRAZY – zkušební úprava hlavičky (a textu na úvodu) (07.10) ─── */
-/* menu: bez podtržení, při najetí/aktivní jen tučně */
-body.page-home .nav-list a:hover,
-body.page-home .nav-list a.active,
-body.page-obrazy .nav-list a:hover,
-body.page-obrazy .nav-list a.active {
+/* ─── HLAVIČKA A TEXT – jednotně na všech stránkách (07.10, rozšířeno 11.10) ─── */
+/* menu: bez podtržení, při najetí/aktivní jen tučně (PC i mobilní rozcestník) */
+.nav-list a:hover,
+.nav-list a.active {
   color: var(--black);
   font-weight: 600;
   text-decoration: none;
 }
 
 /* text pod hlavičkou o malinko větší */
-body.page-home .page-header .lead,
-body.page-home .text-block p {
+.page-header .lead,
+.text-block p {
   font-size: 1.07rem;
 }
 
 @media (min-width: 721px) {
   /* hlavička větší, ale celková výška zůstává stejná (menší řádkování) */
-  body.page-home .nav-list a,
-  body.page-obrazy .nav-list a {
+  .nav-list a {
     font-size: 18px;
     line-height: 1.7;
   }
-  body.page-home .site-name,
-  body.page-obrazy .site-name {
+  .site-name {
     font-size: 39px;
     line-height: 1.45;
   }
-  body.page-home .site-tagline,
-  body.page-obrazy .site-tagline {
+  .site-tagline {
     font-size: 28px;
     line-height: 1.4;
   }
 
-  /* větší mezera mezi hlavičkou a textem – na první pohled jen první odstavec */
-  body.page-home .page-header {
+  /* větší mezera mezi hlavičkou a textem – na první pohled jen první odstavec
+     (kontakt má svou mezeru beze změny) */
+  .page-header {
+    padding-top: 7.5rem;
+  }
+  main .coming-soon {
     padding-top: 7.5rem;
   }
 }
@@ -483,6 +481,17 @@ body.page-kontakt .contact-section {
   transition: opacity 0.2s;
 }
 .contact-value a:hover { opacity: 0.4; }
+
+/* text nad QR kódem – stejné písmo jako telefon a e-mail */
+.contact-row--qr {
+  margin-top: 1.8rem;
+}
+.contact-row--qr .contact-value {
+  line-height: 1.3;
+}
+.contact-row--qr + .contact-qr {
+  margin-top: 0.6rem;
+}
 
 .contact-qr {
   width: min(180px, 60vw);
@@ -702,8 +711,8 @@ body.page-kontakt {
   .hero { padding: 4rem 0 3.5rem; }
   .hero h1 { margin-bottom: 1.8rem; }
 
-  .page-header { padding: 1.5rem 0 0; margin-bottom: 1.5rem; }
-  body.page-home .page-header { padding-top: 5rem; }
+  /* mezera mezi hlavičkou a textem stejná jako na úvodu (kontakt beze změny) */
+  .page-header { padding: 5rem 0 0; margin-bottom: 1.5rem; }
 
   .service-item { padding: 2rem 0; }
 
