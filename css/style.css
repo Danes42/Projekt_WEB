@@ -82,7 +82,7 @@ ul { list-style: none; }
 
 @media (min-width: 901px) {
   .nav-banner-outer {
-    padding-top: 0.6rem;
+    padding-top: 0;
     height: calc(475px + 0.6rem);
   }
 
@@ -95,8 +95,8 @@ ul { list-style: none; }
   }
 
   .nav-banner--desktop-short {
-    height: 150px;
-    flex: 0 0 150px;
+    height: calc(150px + 0.6rem);
+    flex: 0 0 calc(150px + 0.6rem);
   }
 
   .nav-banner--desktop-short picture {
@@ -104,7 +104,7 @@ ul { list-style: none; }
   }
 
   .nav-banner--desktop-short img {
-    height: 150px;
+    height: calc(150px + 0.6rem);
     object-fit: cover;
     object-position: center;
   }
@@ -136,7 +136,7 @@ ul { list-style: none; }
 
   body.page-home .nav-banner-outer {
     height: calc(475px + 0.6rem);
-    padding-top: 0.6rem;
+    padding-top: 0;
   }
 
   body.page-home .nav-banner-stack .nav-banner + .nav-banner {
@@ -144,11 +144,11 @@ ul { list-style: none; }
   }
 
   body.page-home .nav-banner--desktop-short {
-    flex: 0 0 150px;
+    flex: 0 0 calc(150px + 0.6rem);
   }
 
   body.page-home .nav-banner--desktop-short img {
-    height: 150px;
+    height: calc(150px + 0.6rem);
     object-fit: cover;
     object-position: center;
   }
@@ -396,7 +396,7 @@ body.page-konzultace .lead {
 
 .text-block p {
   color: var(--grey-text);
-  font-size: 1rem;
+  font-size: 1.07rem;
   line-height: 1.9;
   margin-bottom: 1.5rem;
 }
@@ -427,7 +427,7 @@ body.page-konzultace .lead {
 }
 
 .service-desc {
-  font-size: 0.97rem;
+  font-size: 1.07rem;
   color: var(--grey-text);
   line-height: 1.8;
 }
@@ -482,12 +482,12 @@ body.page-kontakt .contact-section {
 }
 .contact-value a:hover { opacity: 0.4; }
 
-/* text nad QR kódem – stejné písmo jako telefon a e-mail */
+/* text nad QR kódem – stejný styl jako popisky „Telefon“ a „E-mail“ */
 .contact-row--qr {
   margin-top: 1.8rem;
 }
-.contact-row--qr .contact-value {
-  line-height: 1.3;
+.contact-row--qr .contact-label {
+  line-height: 1.5;
 }
 .contact-row--qr + .contact-qr {
   margin-top: 0.6rem;
