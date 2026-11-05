@@ -515,13 +515,17 @@ body.page-kontakt .contact-section {
 
 /* text nad QR kódem – stejný styl jako popisky „Telefon“ a „E-mail“ */
 .contact-row--qr {
-  margin-top: 1.8rem;
+  margin-top: 0.5rem;
 }
 .contact-row--qr .contact-label {
   line-height: 1.5;
 }
 .contact-row--qr + .contact-qr {
   margin-top: 0.6rem;
+}
+/* bankovní účet pod QR kódem – o něco větší odstup od QR kódu */
+.contact-row--ucet {
+  margin-top: 1.2rem;
 }
 
 .contact-qr {
